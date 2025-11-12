@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Inclusion du fichier css pour le style du jeu -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/style.css">
 
     <!-- Inclusion des 3 scripts nécessaires pour faire fonctionner le jeu -->
     <!-- Attention, l'ordre des fichiers js est important.  -->
-    <script src="config.js" defer></script>
-    <script src="script.js" defer></script>
-    <script src="main.js" defer></script>
+    <script src="./scripts/config.js" defer></script>
+    <script src="./scripts/popup.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
 </head>
 <body>
     <!-- HEADER -->
@@ -27,9 +28,9 @@
         <div class="zoneOptions">
             <p>Choisissez votre option et tapez la proposition qui s'affiche dans le champ en-dessous.</p>
             <div class="optionSource">
-                <input type="radio" name="optionSource" id="mots" value="1" checked>
+                <input type="radio" name="optionSource" id="mots" value="Mots" checked>
                 <label for="mots">Mots</label>
-                <input type="radio" name="optionSource" id="phrases" value="2">
+                <input type="radio" name="optionSource" id="phrases" value="Phrases">
                 <label for="phrases">Phrases</label>
             </div>
         </div>
@@ -46,6 +47,10 @@
         <div class="zoneScore">
             Votre score : <span>0</span>
         </div>
+
+        <div class="zonePartage">
+            <button>Partager</button>
+        </div>
         
     </main>
 
@@ -53,5 +58,20 @@
     <footer>
         @Copyright : Openclassrooms. 
     </footer>
+
+    <!-- Popup de partage -->
+    <div class="popupBackground">
+        <div class="popup">
+            <div>Partagez votre score</div>
+            <form>
+                <label for="nom">Votre nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom">
+                <label for="email">Avec qui voulez-vous partager votre score ?</label>
+                <input type="email" id="email" name="email" placeholder="nom@domaine.com">
+                <button id="btnEnvoyerMail">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
